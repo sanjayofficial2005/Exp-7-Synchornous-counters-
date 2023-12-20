@@ -1,4 +1,5 @@
-# Exp-6-Synchornous-counters - up counter and down counter 
+## Date:
+## Exp No:06-Synchornous-counters - up counter and down counter 
 ### AIM: To implement 4 bit up and down counters and validate  functionality.
 ### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
 ### SOFTWARE REQUIRED:   Quartus prime
@@ -65,29 +66,30 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 Developed by: SANJAY M
 RegisterNumber:23013084
 
-UP COUNTER
-module up_counter (clk,A);
+## UPCOUNTER:
+module up(clk,A);
 input clk;
 output reg[0:3]A;
-always@ (posedge clk)
+always@(posedge clk)
 begin
-    A[0]=((A[1])&(A[2])&(A[3]))^A[0];
-	 A[1]=((A[2])&(A[3]))^A[1];
-	 A[2]=((A[3]))^A[2];
-	 A[3]=1^A[3];
-end 
+		A[0]=((((A[1])&(A[2]))&A[3])^A[0]);
+		A[1]=(((A[2])&(A[3]))^A[1]);
+		A[2]=((A[3])^A[2]);
+		A[3]=1^A[3];
+end
 endmodule
 
- DOWN COUNTER
-module down_counter (clk,A);
+
+## DOWNCOUNTER:
+module downc(clk,A);
 input clk;
 output reg[0:3]A;
-always@ (posedge clk)
-begin  
-     A[0]=((~A[1])&(~A[2])&(~A[3]))^A[0];
-	  A[1]=((~A[2])&(~A[3]))^A[1];
-	  A[2]=((~A[3]))^A[2];
-	  A[3]=1^A[3];
+always@(posedge clk)
+begin
+		A[0]=((((~A[1])&(~A[2]))&(~A[3]))^A[0]);
+		A[1]=(((~A[2])&(~A[3]))^A[1]);
+		A[2]=((~A[3])^A[2]);
+		A[3]=1^A[3];
 end
 endmodule
 ```
@@ -102,10 +104,13 @@ endmodule
 
 
 
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
-![up counter rtl (1)](https://github.com/sanjayofficial2005/Exp-7-Synchornous-counters-/assets/148048602/a600dd80-7de9-47e0-8f61-6ea9b62b6db1)
+### RTL LOGIC UP COUNTER AND DOWN COUNTER  :
+## UP Counter:
+![Screenshot 2023-12-20 121430](https://github.com/sanjayofficial2005/Exp-7-Synchornous-counters-/assets/148048602/00858edf-7448-4a85-8c9f-55c431246e2b)
 
-![down rtl](https://github.com/sanjayofficial2005/Exp-7-Synchornous-counters-/assets/148048602/05aa5efd-29b2-4272-a2f3-5143bf7a05b6)
+## Down Counter:
+![Screenshot 2023-12-20 121415](https://github.com/sanjayofficial2005/Exp-7-Synchornous-counters-/assets/148048602/970992ae-9b4d-44db-bd20-a7201f136aff)
+
 
 
 
@@ -117,9 +122,11 @@ endmodule
 
 
 ### TIMING DIGRAMS FOR COUNTER  
-![up counter output](https://github.com/sanjayofficial2005/Exp-7-Synchornous-counters-/assets/148048602/c100d711-d0a5-4607-97a0-af4820b6b9b5)
+## UP Counter:
+![Screenshot 2023-12-20 121357](https://github.com/sanjayofficial2005/Exp-7-Synchornous-counters-/assets/148048602/fbc7989b-f317-434b-81fb-e44428395dfb)
 
-![down output](https://github.com/sanjayofficial2005/Exp-7-Synchornous-counters-/assets/148048602/60733b5e-ccf6-4d95-9546-794d00f95b5c)
+## Down Counter:
+![Screenshot 2023-12-20 121340](https://github.com/sanjayofficial2005/Exp-7-Synchornous-counters-/assets/148048602/a6ab5fcc-99c0-480e-b9b9-ae4d924ff50f)
 
 
 
@@ -127,10 +134,12 @@ endmodule
 
 
 ### TRUTH TABLE 
-![up counter](https://github.com/sanjayofficial2005/Exp-7-Synchornous-counters-/assets/148048602/fe3700d5-b3f5-4f49-99c0-efa1bd5ca258)
+## UP Counter:
+![Screenshot 2023-12-20 121324](https://github.com/sanjayofficial2005/Exp-7-Synchornous-counters-/assets/148048602/9719cb78-c9f6-47db-a0db-fdaa9354e2b0)
 
-![down counter](https://github.com/sanjayofficial2005/Exp-7-Synchornous-counters-/assets/148048602/f9dbf80c-c480-4dbb-bc8d-7df3e672a4ce)
 
+## Down Counter:
+![Screenshot 2023-12-20 121302](https://github.com/sanjayofficial2005/Exp-7-Synchornous-counters-/assets/148048602/8007dbc7-4384-4fce-be0d-b75d205ab7f5)
 
 
 
